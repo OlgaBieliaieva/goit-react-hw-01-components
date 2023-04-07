@@ -1,4 +1,4 @@
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import TransactionItem from './TransactionItem';
 
 const TransactionHistory = ({ transactions }) => {
@@ -28,3 +28,7 @@ const TransactionHistory = ({ transactions }) => {
 };
 
 export default TransactionHistory;
+
+TransactionHistory.propTypes = {
+  id: PropTypes.string.isRequired,
+};

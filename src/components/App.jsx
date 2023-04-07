@@ -9,24 +9,17 @@ import TransactionHistory from './transactionHistory/TransactionHistory';
 
 export const App = () => {
   return (
-    <>
-      <Profile user={userProfile} />
+    <section className="appContainer">
+      <Profile
+        user={userProfile.username}
+        tag={userProfile.tag}
+        location={userProfile.location}
+        avatar={userProfile.avatar}
+        stats={userProfile.stats}
+      />
       <Statistics title="Upload stats" data={statData} />
       <FriendList friends={userFriends} />
       <TransactionHistory transactions={userTransactions} />
-    </>
-    // <div
-    //   style={{
-    //     height: '100vh',
-    //     display: 'flex',
-    //     justifyContent: 'center',
-    //     alignItems: 'center',
-    //     fontSize: 40,
-    //     color: '#010101',
-    //   }}
-    // >
-    //   React homework template
-    //
-    // </div>
+    </section>
   );
 };

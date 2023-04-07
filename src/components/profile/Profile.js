@@ -1,75 +1,29 @@
 import PropTypes from 'prop-types';
+import css from './Profile.module.css';
 
-const Profile = ({ user }) => {
-  const { username, tag, location, avatar } = user;
-  const { followers = 0, views = 0, likes = 0 } = user.stats;
+const Profile = ({ user, tag, location, avatar, stats }) => {
+  console.log(Object.keys(stats));
+  const { followers = 0, views = 0, likes = 0 } = stats;
   return (
-    <div
-    // class="profile"
-    >
-      <div
-      //   class="description"
-      >
-        <img
-          src={avatar}
-          alt="User avatar"
-          //   class="avatar"
-        />
-        <p
-        // class="name"
-        >
-          {username}
-        </p>
-        <p
-        // class="tag"
-        >
-          @{tag}
-        </p>
-        <p
-        // class="location"
-        >
-          {location}
-        </p>
+    <div className={css.profileContainer}>
+      <div className={css.profileDescription}>
+        <img src={avatar} alt="User avatar" className={css.profileAvatar} />
+        <p className={css.userName}>{user}</p>
+        <p>@{tag}</p>
+        <p>{location}</p>
       </div>
-
-      <ul
-      //   class="stats"
-      >
-        <li>
-          <span
-          //   class="label"
-          >
-            Followers
-          </span>
-          <span
-          //   class="quantity"
-          >
-            {followers}
-          </span>
+      <ul className={css.profileStats}>
+        <li className={css.statsItem}>
+          <span className={css.statLabel}>Followers</span>
+          <span className={css.statQuantity}>{followers}</span>
         </li>
-        <li>
-          <span
-          //   class="label"
-          >
-            Views
-          </span>
-          <span
-          //   class="quantity"
-          >
-            {views}
-          </span>
+        <li className={css.statsItem}>
+          <span className={css.statLabel}>Views</span>
+          <span className={css.statQuantity}>{views}</span>
         </li>
-        <li>
-          <span
-          //   class="label"
-          >
-            Likes
-          </span>
-          <span
-          //   class="quantity"
-          >
-            {likes}
-          </span>
+        <li className={css.statsItem}>
+          <span className={css.statLabel}>Likes</span>
+          <span className={css.statQuantity}>{likes}</span>
         </li>
       </ul>
     </div>
@@ -79,15 +33,13 @@ const Profile = ({ user }) => {
 export default Profile;
 
 Profile.propTypes = {
-  user: PropTypes.shape({
-    username: PropTypes.string.isRequired,
-    tag: PropTypes.string.isRequired,
-    location: PropTypes.string.isRequired,
-    avatar: PropTypes.string.isRequired,
-    stats: PropTypes.shape({
-      followers: PropTypes.number.isRequired,
-      views: PropTypes.number.isRequired,
-      likes: PropTypes.number.isRequired,
-    }),
+  user: PropTypes.string.isRequired,
+  tag: PropTypes.string.isRequired,
+  location: PropTypes.string.isRequired,
+  avatar: PropTypes.string.isRequired,
+  stats: PropTypes.shape({
+    followers: PropTypes.number.isRequired,
+    views: PropTypes.number.isRequired,
+    likes: PropTypes.number.isRequired,
   }),
 };

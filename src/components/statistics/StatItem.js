@@ -1,9 +1,10 @@
 import PropTypes from 'prop-types';
+import css from './Statistics.module.css';
 
 const StatItem = ({ type, percentage = 0 }) => {
   return (
     <>
-      <span>.{type}</span>
+      <span className={css.accentContent}>{type}</span>
       <span>{percentage}%</span>
     </>
   );
