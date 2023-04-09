@@ -2,7 +2,6 @@ import PropTypes from 'prop-types';
 import css from './Profile.module.css';
 
 const Profile = ({ user, tag, location, avatar, stats }) => {
-  console.log(Object.keys(stats));
   const { followers = 0, views = 0, likes = 0 } = stats;
   return (
     <div className={css.profileContainer}>

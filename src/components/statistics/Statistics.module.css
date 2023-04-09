@@ -1,5 +1,6 @@
 .statisticsContainer {
-  width: 50%;
+  width: 80%;
+  max-width: 600px;
   display: flex;
   flex-direction: column;
   justify-content: center;

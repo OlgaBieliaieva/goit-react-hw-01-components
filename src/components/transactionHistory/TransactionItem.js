@@ -1,11 +1,12 @@
 import PropTypes from 'prop-types';
+import css from './TransactionHistory.module.css';
 
 const TransactionItem = ({ type, amount, currency }) => {
   return (
     <>
-      <td>{type}</td>
-      <td>{amount}</td>
-      <td>{currency}</td>
+      <td className={css.tableTypeCell}>{type}</td>
+      <td className={css.tableAmountCell}>{amount}</td>
+      <td className={css.tableCurrencyCell}>{currency}</td>
     </>
   );
 };

@@ -1,0 +1,38 @@
+.tableContainer {
+  width: 90%;
+  max-width: 800px;
+  font-size: 18px;
+  color: #a3acb7;
+  background-color: #ffffff;
+}
+
+.tableHead {
+  height: 50px;
+  background-color: #00bcd5;
+  color: #ffffff;
+  font-size: 22px;
+}
+
+.tableRow {
+  height: 50px;
+}
+.oddRow {
+  composes: tableRow;
+  background-color: #ecf1f4;
+}
+.evenRow {
+  composes: tableRow;
+}
+
+.tableTypeCell {
+  padding-left: 50px;
+}
+
+.tableAmountCell {
+  padding-right: 50px;
+  text-align: end;
+}
+
+.tableCurrencyCell {
+  text-align: center;
+}
