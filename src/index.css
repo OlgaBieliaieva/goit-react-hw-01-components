@@ -37,8 +37,8 @@ img {
 
 .appContainer {
   width: 100%;
-  padding: 0 15px;
-  margin: 0 auto;
+  padding: 0;
+  margin: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
