@@ -6,9 +6,7 @@ import css from './Statistics.module.css';
 const Statistics = ({ title, data }) => {
   return (
     <section className={css.statisticsContainer}>
-      {title.length > 0 && (
-        <h2 className={css.statisticsTitle}>{title.toUpperCase()}</h2>
-      )}
+      {title && <h2 className={css.statisticsTitle}>{title.toUpperCase()}</h2>}
 
       <ul className={css.statisticsList}>
         {data.map(item => (
